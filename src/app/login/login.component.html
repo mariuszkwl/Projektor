@@ -1,3 +1,31 @@
-<p>
-  login works!
-</p>
+<form [formGroup]="loginMess" (ngSubmit)="onSubmit(form)" class="example-form" #form="ngForm">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="e-mail: " [formControlName]="'emailFormControl'" name="emailFormControl" id="emailFormControl">
+      <!-- <mat-hint>Wprowadź e-maila</mat-hint> -->
+      <!-- <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Proszę wprowadzić poprawny adrea e-mail
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email jest <strong>nie poprawny</strong>
+          </mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="password: " [type]="hide ? 'password' : 'text'"  name="paswordFormControl" id="paswordFormControl"  [formControlName]="'paswordFormControl'">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <!-- <mat-hint>Wprowadź hasło</mat-hint> -->
+    </mat-form-field>
+    <!-- <mat-error *ngIf="paswordFormControl.hasError('pasword') && !paswordFormControl.hasError('required')">
+          Proszę wprowadzić poprawny adrea e-mail
+        </mat-error>
+        <mat-error *ngIf="paswordFormControl.hasError('required')">
+          Email jest <strong>nie poprawny</strong>
+        </mat-error> -->
+        <!-- <mat-error *ngIf="error">
+          {{error}}
+        </mat-error> -->
+
+    <button mat-raised-button type="submit" [disabled]="(loginMess.invalid)">Login</button>
+    <!-- <button mat-raised-button type="button" (click)="singUp()" [disabled]="(loginMess.invalid)">Singup</button> -->
+
+  </form>

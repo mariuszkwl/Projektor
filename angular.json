@@ -28,18 +28,13 @@
             ],
             "styles": [
               {
-                "input": "node_modules/materialize-css/dist/css/materialize.min.css"
-              },
-              {
                 "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
 
               },
               "src/styles.style.scss"
             ],
             "scripts": [
-              {
-                "input": "node_modules/materialize-css/dist/js/materialize.min.js"
-              }
+
             ]
           },
           "configurations": {
