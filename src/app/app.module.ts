@@ -8,15 +8,30 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { NavComponent } from './nav/nav.component';
 import { HeroComponent } from './hero/hero.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
-  declarations: [AppComponent, NavComponent, HeroComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    NavComponent,
+    HeroComponent,
+    HomeComponent,
+    LoginComponent,
+    SignupComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   exports: [MatButtonModule],
+  entryComponents: [LoginComponent, SignupComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

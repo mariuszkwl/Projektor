@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { SignupComponent } from '../signup/signup.component';
 
 @Component({
   selector: 'app-hero',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
-
+  modalSignUp() {
+    const dialog = this.dialog.open(SignupComponent, {
+      width: 'auto',
+      height: 'auto'
+    });
+  }
 }
