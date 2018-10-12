@@ -14,8 +14,8 @@ $colorBlue: #009FFF;
   /* IE6-9 */
 height: 80px;
 .logoPL{
-//  float: left;
- // margin-left: 100px;
+  float: left;
+  margin-left: 100px;
 }
   .buttonJoin {
     color: $colorBlue;
@@ -51,7 +51,8 @@ height: 80px;
   .btnNavAll{
 
      float: right;
-   // margin-right: 100px;
+     margin-left: auto;
+    margin-right: 100px;
   }
 
 }
