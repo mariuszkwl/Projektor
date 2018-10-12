@@ -1,0 +1,52 @@
+$colorBackGround: #F1F1F1;
+$colorTextHero: #343434;
+@import url('https://fonts.googleapis.com/css?family=Lato:900');
+@import url('https://fonts.googleapis.com/css?family=Lato:900|Roboto:500');
+
+.bodyHero {
+  background-color: $colorBackGround;
+  height: 520px;
+  width: 100%;
+
+
+
+  .glasses {
+    position: relative;
+    top: 200px;
+
+    @media only screen and (max-width: 700px) {
+      // width: 50%;
+      // height: 50%;
+    }
+  }
+}
+
+.textHeroName {
+  color: $colorTextHero;
+  font-family: 'Lato', sans-serif;
+  font-size: 100px;
+  position: relative;
+  top: -60%;
+  text-align: center;
+
+  @media only screen and (max-width: 700px) {
+    font-size: 60px;
+  }
+
+}
+.textHeroMore{
+  color: $colorTextHero;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  position: relative;
+  top: -60%;
+  text-align: center;
+}
+.buttonSinUp{
+  position: absolute;
+  font-family: 'Roboto', sans-serif;
+left: 50%;
+transform: translate(-50%, -800%);
+  text-align: center;
+  border-radius: 12px;
+}

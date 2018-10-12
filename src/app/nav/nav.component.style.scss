@@ -16,13 +16,13 @@ $colorBlue: #009FFF;
   .buttonJoin {
     color: $colorBlue;
     border: solid 3px $colorBlue;
-    border-radius: 20px;
-    height: 40px;
-    transform: translate(0%, 30%);
+    border-radius: 12px;
+    height: 35px;
+    transform: translate(0%, 40%);
 
     .textJoin {
       position: relative;
-      top: -15px;
+      top: -18px;
       transform: translate((100%, 100%));
     }
   }

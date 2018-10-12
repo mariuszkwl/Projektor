@@ -1,12 +1,16 @@
 <nav>
   <div class="nav-wrapper navBackGround">
     <div class="container">
-    <a href="#" class="brand-logo"> <img src="../../assets/logoPL.gif" alt="Logo Politechnika Lubelska" class="logoPL"> Projektor</a>
+    <a class="brand-logo"> <img src="../../assets/logoPL.gif" alt="Logo Politechnika Lubelska" class="logoPL"> Projektor</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="sass.html">Student</a></li>
-      <li><a href="badges.html">Wykładowca</a></li>
-      <li><a href="collapsible.html" class="buttonJoin"><span class="textJoin">Rejestracja</span></a></li>
+
+      <li><a routerLink="home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="lecture" routerLinkActive="active">Course</a></li>
+      <li><a routerLink="test" routerLinkActive="active">Test</a></li>
+      <li><a routerLink="about" routerLinkActive="active">About</a></li>
+      <li><a  routerLink="signin" routerLinkActive="active" class="buttonJoin"><span class="textJoin">Sign In</span></a></li>
     </ul>
   </div>
 </div>
 </nav>
+<router-outlet></router-outlet>
