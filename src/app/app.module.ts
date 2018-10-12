@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { NavComponent } from './nav/nav.component';
 import { HeroComponent } from './hero/hero.component';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,9 @@ import { MatInputModule } from '@angular/material';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule
+
   ],
   exports: [MatButtonModule, MatIconModule],
   entryComponents: [LoginComponent, SignupComponent],
