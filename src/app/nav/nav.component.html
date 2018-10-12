@@ -1,16 +1,16 @@
 <nav>
   <div class="nav-wrapper navBackGround">
-    <div class="container">
-    <a class="brand-logo"> <img src="../../assets/logoPL.gif" alt="Logo Politechnika Lubelska" class="logoPL"> Projektor</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+<div class="logoPL">
+   <img src="../../assets/logoPL.gif" alt="Logo Politechnika Lubelska" class="logoPL"><h3>Projektor</h3>
+</div>
+<div class="btnNavAll">
+      <button mat-button routerLink="home" routerLinkActive="active" class="btnNav">Home</button>
+      <button mat-button routerLink="lecture" routerLinkActive="active" class="btnNav">Course</button>
+      <button mat-button routerLink="test" routerLinkActive="active" class="btnNav">Test</button>
+      <button mat-button routerLink="about" routerLinkActive="active" class="btnNav">About</button>
+      <button mat-button  (click)="modalLogin()" class="buttonJoin" class="btnNav buttonJoin"><span class="textJoin">Sign In</span></button>
+    </div>
 
-      <li><a routerLink="home" routerLinkActive="active">Home</a></li>
-      <li><a routerLink="lecture" routerLinkActive="active">Course</a></li>
-      <li><a routerLink="test" routerLinkActive="active">Test</a></li>
-      <li><a routerLink="about" routerLinkActive="active">About</a></li>
-      <li><a  (click)="modalLogin()" class="buttonJoin"><span class="textJoin">Sign In</span></a></li>
-    </ul>
-  </div>
 </div>
 </nav>
 <router-outlet></router-outlet>

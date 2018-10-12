@@ -12,18 +12,29 @@ $colorBlue: #009FFF;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#606060', endColorstr='#000000', GradientType=0);
   /* IE6-9 */
-
+height: 80px;
+.logoPL{
+  float: left;
+  margin-left: 100px;
+}
   .buttonJoin {
     color: $colorBlue;
-    border: solid 3px $colorBlue;
-    border-radius: 12px;
-    height: 35px;
-    transform: translate(0%, 40%);
+    border: solid 4px $colorBlue;
+    border-radius: 15px;
+
+    display: inline-flex;
+    height: 50px;
+  align-items: flex-end;
+    transform: translate(0%, 25%);
+
 
     .textJoin {
+      color: $colorBlue;
       position: relative;
-      top: -18px;
-      transform: translate((100%, 100%));
+      padding: 10px;
+      text-align: center;
+         top: -12px;
+     //transform: translate((0%, -25%));
     }
   }
   .logoPL{
@@ -32,4 +43,13 @@ $colorBlue: #009FFF;
     position: relative;
       top: 10px;
   }
+  .btnNav{
+    color: white;
+    padding: 15px;
+  }
+  .btnNavAll{
+    float: right;
+    margin-right: 100px;
+  }
+
 }
