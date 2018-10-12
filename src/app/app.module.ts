@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -35,10 +37,12 @@ import { MatInputModule } from '@angular/material';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    LayoutModule,
+    FlexLayoutModule
 
   ],
-  exports: [MatButtonModule, MatIconModule],
+  exports: [MatButtonModule, MatIconModule, FlexLayoutModule],
   entryComponents: [LoginComponent, SignupComponent],
   providers: [],
   bootstrap: [AppComponent]

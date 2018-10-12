@@ -14,17 +14,17 @@ $colorBlue: #009FFF;
   /* IE6-9 */
 height: 80px;
 .logoPL{
-  float: left;
-  margin-left: 100px;
+//  float: left;
+ // margin-left: 100px;
 }
   .buttonJoin {
     color: $colorBlue;
     border: solid 4px $colorBlue;
     border-radius: 15px;
 
-    display: inline-flex;
+   // display: inline-flex;
     height: 20px;
-  align-items: flex-end;
+ // align-items: flex-end;
     transform: translate(0%, 50%);
 
 
@@ -40,8 +40,8 @@ height: 80px;
   .logoPL{
     width: 40px;
     height: 40px;
-    position: relative;
-      top: 10px;
+    // position: relative;
+    //   top: 10px;
   }
   .btnNav{
     color: white;
@@ -49,8 +49,9 @@ height: 80px;
     font-size: 20px;
   }
   .btnNavAll{
-    float: right;
-    margin-right: 100px;
+
+     float: right;
+   // margin-right: 100px;
   }
 
 }
