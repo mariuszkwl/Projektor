@@ -1,6 +1,9 @@
 $colorBlue: #009FFF;
 $colorTextNav: #fff;
 $marginLogoAndButton:50px;
+
+// @import '../../../node_modules/materialize-css/dist/css/materialize.min.css';
+
 .navBackGround {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606060+0,434141+47,000000+100 */
   background: #606060;
@@ -28,7 +31,7 @@ color: $colorTextNav;
 }
 .iconHamburger{
 margin-left: auto;
-margin-right: 25px;
+// margin-right: 5px;
 cursor: pointer;
 
 }

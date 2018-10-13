@@ -1,9 +1,23 @@
-    <mat-toolbar class="navBackGround">
+<!-- <nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="sass.html">Sass</a></li>
+      <li><a href="badges.html">Components</a></li>
+      <li><a href="collapsible.html">JavaScript</a></li>
+    </ul>
+  </div>
+</nav> -->
+
+
+
+
+  <mat-toolbar class="navBackGround">
       <mat-toolbar-row>
         <img src="../../assets/logoPL.gif" alt="Logo Politechnika Lubelska" class="logoPL">
         <div style="transform: translate(0px,2px)"> {{ "Projektor" | uppercase }}</div>
-        <div fxShow="true" fxHide.gt-sm  class="iconHamburger" style="transform: translate(0px,5px); padding: 10px">
-          <mat-icon *ngIf="true">menu</mat-icon>
+        <div fxShow="true" fxHide.gt-sm  class="iconHamburger" style="transform: translate(0px,0px); padding: 0px">
+          <a><button mat-button class="btnNav"> <mat-icon *ngIf="true">menu</mat-icon></button></a>
           <mat-icon *ngIf="false">close</mat-icon>
         </div>
         <span class="example-spacer"></span>
@@ -14,6 +28,7 @@
           <a><button mat-button routerLink="about" routerLinkActive="active" class="btnNav">About</button></a>
           <a><button mat-button (click)="modalLogin()" class="buttonJoin" class="btnNav buttonJoin"><span class="textJoin">Sign
                 In</span></button></a>
+                <!-- <a class="waves-effect waves-light btn">button</a> -->
         </div>
       </mat-toolbar-row>
     </mat-toolbar>

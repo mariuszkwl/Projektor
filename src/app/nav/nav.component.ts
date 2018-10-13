@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { LoginComponent } from '../login/login.component';
 // import { AutofillMonitor } from '@angular/cdk/text-field';
-
+import '../../../node_modules/materialize-css/dist/js/materialize.js';
 
 @Component({
   selector: 'app-nav',
