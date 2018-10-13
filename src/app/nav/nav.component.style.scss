@@ -1,5 +1,6 @@
 $colorBlue: #009FFF;
-
+$colorTextNav: #fff;
+$marginLogoAndButton:50px;
 .navBackGround {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606060+0,434141+47,000000+100 */
   background: #606060;
@@ -12,11 +13,29 @@ $colorBlue: #009FFF;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#606060', endColorstr='#000000', GradientType=0);
   /* IE6-9 */
-height: 80px;
+height: 70px;
+color: $colorTextNav;
+
+
 .logoPL{
   float: left;
-  margin-left: 100px;
+  margin-left: $marginLogoAndButton;
+  margin-right: 20px;
+  width: 45px;
+  height: 45px;
+   position: relative;
+     top: 2px;
 }
+.iconHamburger{
+margin-left: auto;
+margin-right: 25px;
+cursor: pointer;
+
+}
+.textNAmeLogo{
+
+}
+
   .buttonJoin {
     color: $colorBlue;
     border: solid 4px $colorBlue;
@@ -37,14 +56,8 @@ height: 80px;
      transform: translate((0%, -20%));
     }
   }
-  .logoPL{
-    width: 40px;
-    height: 40px;
-    // position: relative;
-    //   top: 10px;
-  }
   .btnNav{
-    color: white;
+    color: $colorTextNav;
     padding: 15px;
     font-size: 20px;
   }
@@ -52,7 +65,7 @@ height: 80px;
 
      float: right;
      margin-left: auto;
-    margin-right: 100px;
+    margin-right: $marginLogoAndButton;
   }
 
 }

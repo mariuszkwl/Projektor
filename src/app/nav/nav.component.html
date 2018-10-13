@@ -1,15 +1,13 @@
-<nav>
-  <div>
     <mat-toolbar class="navBackGround">
       <mat-toolbar-row>
         <img src="../../assets/logoPL.gif" alt="Logo Politechnika Lubelska" class="logoPL">
-        <h3>Projektor</h3>
-        <div fxShow="true" fxHide.gt-sm>
+        <div style="transform: translate(0px,2px)"> {{ "Projektor" | uppercase }}</div>
+        <div fxShow="true" fxHide.gt-sm  class="iconHamburger" style="transform: translate(0px,5px); padding: 10px">
           <mat-icon *ngIf="true">menu</mat-icon>
-          <mat-icon *ngIf="!iconMenu">close</mat-icon>
+          <mat-icon *ngIf="false">close</mat-icon>
         </div>
         <span class="example-spacer"></span>
-        <div class="btnNavAll" fxShow="true" fxHide.lt-sm="true">
+        <div class="btnNavAll" fxShow="true" fxHide.sm fxHide.xs >
           <a><button mat-button routerLink="home" routerLinkActive="active" class="btnNav">Home</button></a>
           <a><button mat-button routerLink="lecture" routerLinkActive="active" class="btnNav">Course</button></a>
           <a><button mat-button routerLink="test" routerLinkActive="active" class="btnNav">Test</button></a>
@@ -19,6 +17,4 @@
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
-  </div>
-</nav>
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
