@@ -9,27 +9,41 @@
   </div>
 </nav> -->
 
+<mat-toolbar class="navBackGround">
+  <mat-toolbar-row>
+    <img src="../../assets/logoPL.gif" alt="Logo Politechnika Lubelska" class="logoPL">
+    <div style="transform: translate(0px,2px)"> {{ "Projektor" | uppercase }}</div>
+    <div fxShow="true" fxHide.gt-sm class="iconHamburger" style="transform: translate(0px,0px); padding: 0px">
+      <a><button mat-button class="btnNav" (click)="sidenav.toggle()">
+          <mat-icon *ngIf="!this.sidenav.opened">menu</mat-icon>
+          <mat-icon *ngIf="this.sidenav.opened">close</mat-icon>
+        </button></a>
+      <mat-icon *ngIf="false">close</mat-icon>
+    </div>
+    <span class="example-spacer"></span>
+    <div class="btnNavAll" fxShow="true" fxHide.sm fxHide.xs>
+      <a><button mat-button routerLink="home" routerLinkActive="active" class="btnNav">Home</button></a>
+      <a><button mat-button routerLink="course" routerLinkActive="active" class="btnNav">Course</button></a>
+      <a><button mat-button routerLink="test" routerLinkActive="active" class="btnNav">Test</button></a>
+      <a><button mat-button routerLink="about" routerLinkActive="active" class="btnNav">About</button></a>
+      <a><button mat-button (click)="modalLogin()" class="buttonJoin" class="btnNav buttonJoin"><span class="textJoin">SignIn</span></button></a>
+      <!-- <a class="waves-effect waves-light btn">button</a> -->
+    </div>
 
+  </mat-toolbar-row>
 
-
-  <mat-toolbar class="navBackGround">
-      <mat-toolbar-row>
-        <img src="../../assets/logoPL.gif" alt="Logo Politechnika Lubelska" class="logoPL">
-        <div style="transform: translate(0px,2px)"> {{ "Projektor" | uppercase }}</div>
-        <div fxShow="true" fxHide.gt-sm  class="iconHamburger" style="transform: translate(0px,0px); padding: 0px">
-          <a><button mat-button class="btnNav"> <mat-icon *ngIf="true">menu</mat-icon></button></a>
-          <mat-icon *ngIf="false">close</mat-icon>
-        </div>
-        <span class="example-spacer"></span>
-        <div class="btnNavAll" fxShow="true" fxHide.sm fxHide.xs >
-          <a><button mat-button routerLink="home" routerLinkActive="active" class="btnNav">Home</button></a>
-          <a><button mat-button routerLink="course" routerLinkActive="active" class="btnNav">Course</button></a>
-          <a><button mat-button routerLink="test" routerLinkActive="active" class="btnNav">Test</button></a>
-          <a><button mat-button routerLink="about" routerLinkActive="active" class="btnNav">About</button></a>
-          <a><button mat-button (click)="modalLogin()" class="buttonJoin" class="btnNav buttonJoin"><span class="textJoin">Sign
-                In</span></button></a>
-                <!-- <a class="waves-effect waves-light btn">button</a> -->
-        </div>
-      </mat-toolbar-row>
-    </mat-toolbar>
-  <router-outlet></router-outlet>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" (backdropClick)="sidenav.close()">
+  <mat-sidenav #sidenav (keydown.escape)="sidenav.close()" disableClose class="sideNav">
+    <p><button mat-button routerLink="home" routerLinkActive="active" (click)="sidenav.close()" class="btnNav">Home</button></p>
+    <p><button mat-button routerLink="course" routerLinkActive="active" (click)="sidenav.close()" class="btnNav">Course</button></p>
+    <p><button mat-button routerLink="test" routerLinkActive="active" (click)="sidenav.close()" class="btnNav">Test</button></p>
+    <p><button mat-button routerLink="about" routerLinkActive="active" (click)="sidenav.close()" class="btnNav">About</button></p>
+    <p><button mat-button (click)="modalLogin()" class="buttonJoin" (click)="sidenav.close()" class="btnNav buttonJoin"><span
+          class="textJoin">SignIn</span></button></p>
+    <p><button mat-button (click)="sidenav.close()">Close</button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

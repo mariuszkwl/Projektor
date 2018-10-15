@@ -13,4 +13,32 @@
 // textarea.materialize-textarea {
 //   border-bottom: none;
 // }
+.loggerBody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+.userLogo{
+  //padding: 10px;
 
+}
+.imgUser{
+  display: block;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  transform: translate(30%,20%);
+}
+
+
+  .inForm {
+    display: grid;
+    grid-template-rows: 2fr 2fr 1fr;
+   padding: 20px;
+  }
+
+}

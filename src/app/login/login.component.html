@@ -1,4 +1,8 @@
-<form [formGroup]="loginMess" (ngSubmit)="onSubmit(form)" class="example-form" #form="ngForm">
+<div class="loggerBody">
+<div class="userLogo" >
+<img src="../../assets/user.png" class="imgUser" alt="User Logo">
+</div>
+<form [formGroup]="loginMess" (ngSubmit)="onSubmit(form)" class="example-form inForm" #form="ngForm">
     <mat-form-field class="example-full-width">
       <input matInput placeholder="e-mail: " [formControlName]="'emailFormControl'" name="emailFormControl" id="emailFormControl">
       <!-- <mat-hint>Wprowadź e-maila</mat-hint> -->
@@ -25,7 +29,8 @@
           {{error}}
         </mat-error> -->
 
-    <button mat-raised-button type="submit" [disabled]="(loginMess.invalid)">Login</button>
+    <button mat-raised-button type="submit" [disabled]="(loginMess.invalid)" class="inButton">Login</button>
     <!-- <button mat-raised-button type="button" (click)="singUp()" [disabled]="(loginMess.invalid)">Singup</button> -->
 
   </form>
+</div>

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { LoginComponent } from '../login/login.component';
 // import { AutofillMonitor } from '@angular/cdk/text-field';
-import '../../../node_modules/materialize-css/dist/js/materialize.js';
+// import '../../../node_modules/materialize-css/dist/js/materialize.js';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-nav',
@@ -10,9 +11,14 @@ import '../../../node_modules/materialize-css/dist/js/materialize.js';
   styleUrls: ['./nav.component.style.scss']
 })
 export class NavComponent implements OnInit {
+  SideNavIsOpen = false;
+  @ViewChild('sidenav')
+  sidenav: MatSidenav;
+
   constructor(public dialog: MatDialog) {}
 
   ngOnInit() {}
+
   modalLogin() {
     const dialog = this.dialog.open(LoginComponent, {
       width: 'auto',
