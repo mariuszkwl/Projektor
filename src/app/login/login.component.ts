@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, NgForm, Validators, FormControl } from '@angular/forms';
+import { LoggerService } from '../logger/logger.service';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +13,16 @@ export class LoginComponent implements OnInit {
   loginMess: FormGroup;
   error = null;
   hide = true;
-  constructor() {}
+  constructor(private logerServices: LoggerService) {}
 
   ngOnInit() {
     this.loginMess = this.initLoginForm();
   }
-  onSubmit(mess) {}
+  onSubmit(mess) {
+    this.logerServices.postLoginUser('1', '2').subscribe(a => {
+      console.log(a);
+    });
+  }
   singUp() {}
 
   initLoginForm() {
