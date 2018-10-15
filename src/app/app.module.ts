@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CourseComponent } from './course/course.component';
+import { LoggerService } from './logger/logger.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { CourseComponent } from './course/course.component';
   ],
   exports: [MatButtonModule, MatIconModule, FlexLayoutModule],
   entryComponents: [LoginComponent, SignupComponent],
-  providers: [],
+  providers: [LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
