@@ -35,7 +35,7 @@ export class CourseComponent implements OnInit {
     console.log('VideoHTML: ');
     console.log(this.videoHtml);
     // this.videoHtml.srcObject;
-    this.rtcPeer.onaddstream = (event) => {
+    this.rtcPeer['onaddstream'] = (event) => {
       this.videoHtml.srcObject = event.stream;
     };
     this.socket['onmessage'] = mess => {
