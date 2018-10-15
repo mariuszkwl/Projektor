@@ -19,9 +19,14 @@ export class LoginComponent implements OnInit {
     this.loginMess = this.initLoginForm();
   }
   onSubmit(mess) {
-    this.logerServices.postLoginUser('1', '2').subscribe(a => {
-      console.log(a);
-    });
+    console.log('mess');
+    console.log(mess.value);
+
+    this.logerServices
+      .postLoginUser(mess.value.emailFormControl, mess.value.paswordFormControl)
+      .subscribe(a => {
+        console.log(a);
+      });
   }
   singUp() {}
 

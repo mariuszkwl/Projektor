@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LoggerService {
-  urlServer = 'https://jsonplaceholder.typicode.com/posts/';
+   urlServer = ' https://stream-support.herokuapp.com/login';
+  // urlServer = 'https://jsonplaceholder.typicode.com/posts/';
   loggedUser = false;
   constructor(private httpClient: HttpClient) {}
   // l: String, p: String
@@ -15,12 +16,18 @@ export class LoggerService {
   /**
    * method  loging  to the server
    *
-   * @param Login
-   * @param Password
+   * @param email
+   * @param password
    *
    * @returns ??
    */
-  postLoginUser(l: String, p: String): Observable<Array<Body>> {
-    return this.httpClient.post<Array<Body>>(this.urlServer, {l});
+  postLoginUser(email: String, password: String): Observable<Array<Body>> {
+    const body = JSON.stringify({
+      emal: email,
+      pasword: password
+    });
+   // const param = new HttpParams().set('userId', 1 + '');
+    return this.httpClient.post<Array<Body>>(this.urlServer, body);
   }
 }
+
