@@ -4,7 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatIconModule, MatToolbarModule, MatSidenavModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatSidenavModule
+} from '@angular/material';
 import { NavComponent } from './nav/nav.component';
 import { HeroComponent } from './hero/hero.component';
 import { HomeComponent } from './home/home.component';
@@ -18,6 +24,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CourseComponent } from './course/course.component';
 import { LoggerService } from './logger/logger.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,8 +50,8 @@ import { LoggerService } from './logger/logger.service';
     MatToolbarModule,
     LayoutModule,
     FlexLayoutModule,
-    MatSidenavModule
-
+    MatSidenavModule,
+    HttpClientModule
   ],
   exports: [MatButtonModule, MatIconModule, FlexLayoutModule],
   entryComponents: [LoginComponent, SignupComponent],

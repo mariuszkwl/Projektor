@@ -1,15 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Person } from '../models/pesron';
+import { HttpClient } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
 export class LoggerService {
-  urlServer: String = ' ';
+  urlServer = 'https://jsonplaceholder.typicode.com/posts/';
   loggedUser = false;
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
+  // l: String, p: String
 
-  // postLoginUser(l: String, p: String): Observable<Array<Person>> {
-
-  // }
+  /**
+   * method  loging  to the server
+   *
+   * @param Login
+   * @param Password
+   *
+   * @returns ??
+   */
+  postLoginUser(l: String, p: String): Observable<Array<Body>> {
+    return this.httpClient.post<Array<Body>>(this.urlServer, {l});
+  }
 }

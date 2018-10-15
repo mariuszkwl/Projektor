@@ -3,3 +3,9 @@ export interface Person {
   email?: String;
   err?: String;
 }
+export interface Body {
+  id?: number;
+  title?: string;
+  body?: string;
+  userId?: number;
+}
