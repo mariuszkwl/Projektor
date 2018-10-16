@@ -8,4 +8,8 @@ export interface Body {
   title?: string;
   body?: string;
   userId?: number;
+  email?: string;
+  password?: string;
+  loginStatus?: string;
+  loginDate?: number;
 }

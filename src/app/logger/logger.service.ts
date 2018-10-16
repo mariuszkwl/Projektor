@@ -22,29 +22,29 @@ export class LoggerService {
    * @returns ??
    */
   postLoginUser(email: String, password: String): Observable<Array<Body>> {
-    // const httpHeaders = new HttpHeaders().append(
-    //   'Content-Type',
-    //   'application/x-www-form-urlencoded; charset=UTF-8'
-    // );
+    const httpHeaders = new HttpHeaders().set(
+      'Content-Type',
+      'application/json; charset=UTF-8'
+    );
+    const httpHeaders1 = new HttpHeaders().append(
+'email', 'test@test.pl'
+    ).append(
+      'password', 'admn1'
+    );
     const body = new HttpParams()
       .append('email', email + '')
       .append('password', password + '');
     // .toString();
     const body2 = {
-      email: email,
-      password: password
+      'email': 'test@test.pl',
+      'password': 'admin1'
     };
+    // const options = new RequestOptions({ headers: httpHeaders });
     const body3 = JSON.stringify({
       email: email,
       pasword: password
     });
     // const param = new HttpParams().set('userId', 1 + '');
-    return this.httpClient.post<Array<Body>>(
-      this.urlServer,
-      body3
-      //   {
-      //   headers: httpHeaders
-      // }
-    );
+    return this.httpClient.post<Array<Body>>(this.urlServer, body3);
   }
 }
