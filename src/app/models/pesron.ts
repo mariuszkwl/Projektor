@@ -13,3 +13,7 @@ export interface Body {
   loginStatus?: string;
   loginDate?: number;
 }
+export interface Post {
+  method?: string;
+  body?: Body;
+}

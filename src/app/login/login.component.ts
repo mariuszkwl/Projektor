@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, NgForm, Validators, FormControl } from '@angular/forms';
 import { LoggerService } from '../logger/logger.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Post, Body } from '../models/pesron';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +29,30 @@ export class LoginComponent implements OnInit {
       .subscribe(a => {
         console.log(a);
       });
+
+//     const _body: Body = {
+//       email: 'test@test.pl',
+//       password: 'admin1'
+//     };
+
+//     const post: Post = {
+//       method: 'POST',
+//       body: _body
+//     };
+// console.log(post);
+
+//     this.logerServices.postLoggerPost(post).subscribe(
+//       a => {
+//         console.log('Back from post');
+//         console.log(a);
+//       },
+//       (err: HttpErrorResponse) => {
+//         console.log('Error');
+//         console.log(err);
+//       }
+//     );
   }
+
   singUp() {}
 
   initLoginForm() {

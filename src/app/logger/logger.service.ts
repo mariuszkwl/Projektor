@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Person } from '../models/pesron';
+import { Person, Post } from '../models/pesron';
+import { Body } from '../models/pesron';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
@@ -21,30 +22,34 @@ export class LoggerService {
    *
    * @returns ??
    */
-  postLoginUser(email: String, password: String): Observable<Array<Body>> {
+  postLoginUser(email: String, password: String): any {
     const httpHeaders = new HttpHeaders().set(
       'Content-Type',
       'application/json; charset=UTF-8'
     );
-    const httpHeaders1 = new HttpHeaders().append(
-'email', 'test@test.pl'
-    ).append(
-      'password', 'admn1'
-    );
+    const httpHeaders1 = new HttpHeaders()
+      .append('email', 'test@test.pl')
+      .append('password', 'admn1');
     const body = new HttpParams()
       .append('email', email + '')
       .append('password', password + '');
     // .toString();
     const body2 = {
-      'email': 'test@test.pl',
-      'password': 'admin1'
+      email: 'test@test.pl',
+      password: 'admin1'
     };
     // const options = new RequestOptions({ headers: httpHeaders });
     const body3 = JSON.stringify({
       email: email,
-      pasword: password
+      pasword: password,
+      'Content-Type': 'application/json'
     });
+
     // const param = new HttpParams().set('userId', 1 + '');
-    return this.httpClient.post<Array<Body>>(this.urlServer, body3);
+    return this.httpClient.post(this.urlServer, body);
+  }
+
+  postLoggerPost(post: Post): Observable<Array<Post>> {
+    return this.httpClient.post<Array<Post>>(this.urlServer, post);
   }
 }
