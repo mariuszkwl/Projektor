@@ -22,7 +22,7 @@ export class LoggerService {
    *
    * @returns ??
    */
-  postLoginUser(email: String, password: String): any {
+  postLoginUser(email: String, password: String): Observable<Array<Post>> {
     const httpHeaders = new HttpHeaders().set(
       'Content-Type',
       'application/json; charset=UTF-8'
@@ -41,12 +41,14 @@ export class LoggerService {
     // const options = new RequestOptions({ headers: httpHeaders });
     const body3 = JSON.stringify({
       email: email,
-      pasword: password,
-      'Content-Type': 'application/json'
+      password: password
     });
+console.log(body3);
 
     // const param = new HttpParams().set('userId', 1 + '');
-    return this.httpClient.post(this.urlServer, body);
+    return this.httpClient.post<Array<Post>>(this.urlServer, body3, {
+      headers: httpHeaders
+    });
   }
 
   postLoggerPost(post: Post): Observable<Array<Post>> {
