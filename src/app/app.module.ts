@@ -25,6 +25,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CourseComponent } from './course/course.component';
 import { LoggerService } from './logger/logger.service';
 import { HttpClientModule } from '@angular/common/http';
+import { VideoComponent } from './video/video.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    CourseComponent
+    CourseComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,
