@@ -5,6 +5,7 @@ import { LoginComponent } from '../login/login.component';
 // import '../../../node_modules/materialize-css/dist/js/materialize.js';
 import { MatSidenav } from '@angular/material/sidenav';
 import { LoggerService } from '../logger/logger.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -16,17 +17,30 @@ export class NavComponent implements OnInit {
   @ViewChild('sidenav')
   sidenav: MatSidenav;
 
-  constructor(private dialog: MatDialog, public logger: LoggerService) {}
+  constructor(
+    private dialog: MatDialog,
+    public logger: LoggerService,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
 
+  /**
+   * show modal login component
+   */
   modalLogin() {
     const dialog = this.dialog.open(LoginComponent, {
       width: 'auto',
       height: 'auto'
     });
   }
+
+  /**
+   * logOut and redirect to home component
+   */
   logOut() {
     this.logger.loggedUser = false;
+    this.router.navigate(['/home']);
+    // TODO: pogać z Mackiem o wylogowaniu z serwera;
   }
 }
