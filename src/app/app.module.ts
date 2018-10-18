@@ -26,6 +26,9 @@ import { CourseComponent } from './course/course.component';
 import { LoggerService } from './logger/logger.service';
 import { HttpClientModule } from '@angular/common/http';
 import { VideoComponent } from './video/video.component';
+import { NoExistComponent } from './no-exist/no-exist.component';
+import { TestsComponent } from './tests/tests.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { VideoComponent } from './video/video.component';
     LoginComponent,
     SignupComponent,
     CourseComponent,
-    VideoComponent
+    VideoComponent,
+    NoExistComponent,
+    TestsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

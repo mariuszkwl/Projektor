@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CourseComponent } from './course/course.component';
+import { AuthGuard } from './auth/auth.guard';
+import { NoExistComponent } from './no-exist/no-exist.component';
+import { TestsComponent } from './tests/tests.component';
+import { AboutComponent } from './about/about.component';
+
 
 const routes: Routes = [
   {
@@ -15,15 +20,17 @@ const routes: Routes = [
   },
   {
     path: 'test',
-    component: HomeComponent
+    component: TestsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'course',
-    component: CourseComponent
+    component: CourseComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'about',
-    component: HomeComponent
+    component: AboutComponent
   },
   {
     path: 'signup',
@@ -33,10 +40,14 @@ const routes: Routes = [
     path: 'signin',
     component: HomeComponent
   },
+  {
+    path: '**',
+    component: NoExistComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
