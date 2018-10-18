@@ -3,6 +3,7 @@ import { FormGroup, NgForm, Validators, FormControl } from '@angular/forms';
 import { LoggerService } from '../logger/logger.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Post, Body } from '../models/pesron';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -14,43 +15,42 @@ export class LoginComponent implements OnInit {
   form: NgForm;
   loginMess: FormGroup;
   error = null;
+  errorEmail = false;
+  errorPass = false;
   hide = true;
-  constructor(private logerServices: LoggerService) {}
+  constructor(private logerServices: LoggerService, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.loginMess = this.initLoginForm();
   }
   onSubmit(mess) {
-    console.log('mess');
-    console.log(mess.value);
+    //  console.log('mess');
+    //  console.log(mess.value);
+console.log(this.form);
 
     this.logerServices
       .postLoginUser(mess.value.emailFormControl, mess.value.paswordFormControl)
       .subscribe(a => {
         console.log(a);
+        if (a['loginStatus'] === 'OK') {
+          this.errorEmail = false;
+          this.errorPass = false;
+          this.logerServices.loggedUser = true;
+          this.dialog.closeAll();
+
+        }
+        if (a['loginStatus'] === 'INVALID_EMAIL') {
+          this.errorEmail = true;
+          this.logerServices.loggedUser = false;
+        }
+        if (a['loginStatus'] === 'INVALID_PASSWORD') {
+
+          this.errorEmail = false;
+          this.errorPass = true;
+          this.logerServices.loggedUser = false;
+        }
+
       });
-
-//     const _body: Body = {
-//       email: 'test@test.pl',
-//       password: 'admin1'
-//     };
-
-//     const post: Post = {
-//       method: 'POST',
-//       body: _body
-//     };
-// console.log(post);
-
-//     this.logerServices.postLoggerPost(post).subscribe(
-//       a => {
-//         console.log('Back from post');
-//         console.log(a);
-//       },
-//       (err: HttpErrorResponse) => {
-//         console.log('Error');
-//         console.log(err);
-//       }
-//     );
   }
 
   singUp() {}

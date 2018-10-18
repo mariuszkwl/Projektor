@@ -4,6 +4,7 @@ import { LoginComponent } from '../login/login.component';
 // import { AutofillMonitor } from '@angular/cdk/text-field';
 // import '../../../node_modules/materialize-css/dist/js/materialize.js';
 import { MatSidenav } from '@angular/material/sidenav';
+import { LoggerService } from '../logger/logger.service';
 
 @Component({
   selector: 'app-nav',
@@ -15,7 +16,7 @@ export class NavComponent implements OnInit {
   @ViewChild('sidenav')
   sidenav: MatSidenav;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, public logger: LoggerService) {}
 
   ngOnInit() {}
 
@@ -24,5 +25,8 @@ export class NavComponent implements OnInit {
       width: 'auto',
       height: 'auto'
     });
+  }
+  logOut() {
+    this.logger.loggedUser = false;
   }
 }
