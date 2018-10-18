@@ -12,7 +12,9 @@ export class LoggerService {
   urlServer = ' https://stream-support.herokuapp.com/login';
   // urlServer = 'https://jsonplaceholder.typicode.com/posts/';
   loggedUser = false;
+
   /**
+   * URL from where user com
    *state Router Service in can Activate nead to redirect url after correct authtentication
    *
    * @type {RouterStateSnapshot}
@@ -52,7 +54,7 @@ export class LoggerService {
       email: email,
       password: password
     });
-   // console.log(body3);
+    // console.log(body3);
 
     // const param = new HttpParams().set('userId', 1 + '');
     return this.httpClient.post<Array<Post>>(this.urlServer, body3, {

@@ -17,19 +17,30 @@ export class NavComponent implements OnInit {
   @ViewChild('sidenav')
   sidenav: MatSidenav;
 
-  constructor(private dialog: MatDialog, public logger: LoggerService, private router: Router) {}
+  constructor(
+    private dialog: MatDialog,
+    public logger: LoggerService,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
 
+  /**
+   * show modal login component
+   */
   modalLogin() {
     const dialog = this.dialog.open(LoginComponent, {
       width: 'auto',
       height: 'auto'
     });
   }
+
+  /**
+   * logOut and redirect to home component
+   */
   logOut() {
     this.logger.loggedUser = false;
-this.router.navigate(['/home']);
+    this.router.navigate(['/home']);
     // TODO: pogać z Mackiem o wylogowaniu z serwera;
   }
 }
