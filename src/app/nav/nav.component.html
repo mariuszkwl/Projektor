@@ -26,7 +26,9 @@
       <a><button mat-button routerLink="course" routerLinkActive="active" class="btnNav">Course</button></a>
       <a><button mat-button routerLink="test" routerLinkActive="active" class="btnNav">Test</button></a>
       <a><button mat-button routerLink="about" routerLinkActive="active" class="btnNav">About</button></a>
-      <a><button mat-button (click)="modalLogin()" class="buttonJoin" class="btnNav buttonJoin"><span class="textJoin">SignIn</span></button></a>
+      <a *ngIf="this.logger.loggedUser"><button mat-button (click)="logOut()" class="buttonJoin" class="btnNav buttonJoin"><span class="textJoin">Sign Out</span></button></a>
+      <a *ngIf="!this.logger.loggedUser"><button mat-button (click)="modalLogin()" class="buttonJoin" class="btnNav buttonJoin"><span class="textJoin">Sign In</span></button></a>
+
       <!-- <a class="waves-effect waves-light btn">button</a> -->
     </div>
 
@@ -39,8 +41,10 @@
     <p><button mat-button routerLink="course" routerLinkActive="active" (click)="sidenav.close()" class="btnNav">Course</button></p>
     <p><button mat-button routerLink="test" routerLinkActive="active" (click)="sidenav.close()" class="btnNav">Test</button></p>
     <p><button mat-button routerLink="about" routerLinkActive="active" (click)="sidenav.close()" class="btnNav">About</button></p>
-    <p><button mat-button (click)="modalLogin()" class="buttonJoin" (click)="sidenav.close()" class="btnNav buttonJoin"><span
-          class="textJoin">SignIn</span></button></p>
+    <p *ngIf="!this.logger.loggedUser"><button mat-button (click)="modalLogin()" class="buttonJoin" (click)="sidenav.close()" class="btnNav buttonJoin"><span
+          class="textJoin">Sign In</span></button></p>
+    <p *ngIf="this.logger.loggedUser"><button mat-button (click)="logOut()" class="buttonJoin" (click)="sidenav.close()" class="btnNav buttonJoin"><span
+          class="textJoin">Sign Out</span></button></p>
     <p><button mat-button (click)="sidenav.close()">Close</button>
   </mat-sidenav>
   <mat-sidenav-content>

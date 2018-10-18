@@ -27,23 +27,23 @@ export class LoggerService {
       'Content-Type',
       'application/json; charset=UTF-8'
     );
-    const httpHeaders1 = new HttpHeaders()
-      .append('email', 'test@test.pl')
-      .append('password', 'admn1');
-    const body = new HttpParams()
-      .append('email', email + '')
-      .append('password', password + '');
-    // .toString();
-    const body2 = {
-      email: 'test@test.pl',
-      password: 'admin1'
-    };
+    // const httpHeaders1 = new HttpHeaders()
+    //   .append('email', 'test@test.pl')
+    //   .append('password', 'admn1');
+    // const body = new HttpParams()
+    //   .append('email', email + '')
+    //   .append('password', password + '');
+    // // .toString();
+    // const body2 = {
+    //   email: 'test@test.pl',
+    //   password: 'admin1'
+    // };
     // const options = new RequestOptions({ headers: httpHeaders });
     const body3 = JSON.stringify({
       email: email,
       password: password
     });
-console.log(body3);
+   // console.log(body3);
 
     // const param = new HttpParams().set('userId', 1 + '');
     return this.httpClient.post<Array<Post>>(this.urlServer, body3, {
@@ -51,7 +51,7 @@ console.log(body3);
     });
   }
 
-  postLoggerPost(post: Post): Observable<Array<Post>> {
-    return this.httpClient.post<Array<Post>>(this.urlServer, post);
-  }
+  // postLoggerPost(post: Post): Observable<Array<Post>> {
+  //   return this.httpClient.post<Array<Post>>(this.urlServer, post);
+  // }
 }
