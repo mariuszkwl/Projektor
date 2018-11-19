@@ -1,0 +1,20 @@
+$colorBackGround: #F1F1F1;
+$colorTextHero: #343434;
+@import url('https://fonts.googleapis.com/css?family=Lato:900');
+@import url('https://fonts.googleapis.com/css?family=Lato:900|Roboto:500');
+
+.bodyNoExist {
+  background-color: $colorBackGround;
+  height: 520px;
+  width: 100%;
+
+}
+    .textNoExist {
+      color: $colorTextHero;
+      font-family: 'Lato', sans-serif;
+      font-size: 75px;
+      position: relative;
+      top: 30%;
+      text-align: center;
+
+    }

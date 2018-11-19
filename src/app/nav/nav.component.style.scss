@@ -16,37 +16,37 @@ $marginLogoAndButton:50px;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#606060', endColorstr='#000000', GradientType=0);
   /* IE6-9 */
-height: 70px;
-color: $colorTextNav;
+  height: 70px;
+  color: $colorTextNav;
 
 
-.logoPL{
-  float: left;
-  margin-left: $marginLogoAndButton;
-  margin-right: 20px;
-  width: 45px;
-  height: 45px;
-   position: relative;
-     top: 2px;
-}
-.iconHamburger{
-margin-left: auto;
-// margin-right: 5px;
-cursor: pointer;
+  .logoPL {
+    float: left;
+    margin-left: $marginLogoAndButton;
+    margin-right: 20px;
+    width: 45px;
+    height: 45px;
+    position: relative;
+    top: 2px;
+  }
 
-}
-.textNAmeLogo{
+  .iconHamburger {
+    margin-left: auto;
+    // margin-right: 5px;
+    cursor: pointer;
 
-}
+  }
+
+  .textNAmeLogo {}
 
   .buttonJoin {
     color: $colorBlue;
     border: solid 4px $colorBlue;
     border-radius: 15px;
 
-   // display: inline-flex;
+    // display: inline-flex;
     height: 20px;
- // align-items: flex-end;
+    // align-items: flex-end;
     transform: translate(0%, 50%);
 
 
@@ -55,19 +55,21 @@ cursor: pointer;
       position: relative;
       padding: 10px;
       text-align: center;
-         top: -20px;
-     transform: translate((0%, -20%));
+      top: -20px;
+      transform: translate((0%, -20%));
     }
   }
-  .btnNav{
+
+  .btnNav {
     color: $colorTextNav;
     padding: 15px;
     font-size: 20px;
   }
-  .btnNavAll{
 
-     float: right;
-     margin-left: auto;
+  .btnNavAll {
+
+    float: right;
+    margin-left: auto;
     margin-right: $marginLogoAndButton;
   }
 

@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, NgForm, Validators, FormControl } from '@angular/forms';
+import { LoggerService } from '../logger/logger.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Post, Body } from '../models/pesron';
+import { MatDialog } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,15 +16,57 @@ export class LoginComponent implements OnInit {
   form: NgForm;
   loginMess: FormGroup;
   error = null;
+  errorEmail = false;
+  errorPass = false;
   hide = true;
-  constructor() {}
+  constructor(
+    private logerServices: LoggerService,
+    private dialog: MatDialog,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.loginMess = this.initLoginForm();
+    // console.log(this.logerServices.stateRouterUrl.url);
   }
-  onSubmit(mess) {}
+  onSubmit(mess) {
+    //  console.log('mess');
+    //  console.log(mess.value);
+    // console.log(this.form);
+
+    this.logerServices
+      .postLoginUser(mess.value.emailFormControl, mess.value.paswordFormControl)
+      .subscribe(a => {
+        console.log(a);
+        if (a['loginStatus'] === 'OK') {
+          this.errorEmail = false;
+          this.errorPass = false;
+          this.logerServices.loggedUser = true;
+          if (typeof this.logerServices.stateRouterUrl !== 'undefined') {
+            // console.log('REDIDERCT');
+            this.router.navigate([this.logerServices.stateRouterUrl.url]);
+          }
+
+          // (this.auth.stateRouter.url) ? (this.router.navigate(this.auth.stateRouter.url)):(null)
+          this.dialog.closeAll();
+        }
+        if (a['loginStatus'] === 'INVALID_EMAIL') {
+          this.errorEmail = true;
+          this.logerServices.loggedUser = false;
+        }
+        if (a['loginStatus'] === 'INVALID_PASSWORD') {
+          this.errorEmail = false;
+          this.errorPass = true;
+          this.logerServices.loggedUser = false;
+        }
+      });
+  }
+
   singUp() {}
 
+  /**
+   * init Form Grup to validate
+   */
   initLoginForm() {
     return new FormGroup({
       emailFormControl: new FormControl(null, [
